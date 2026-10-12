@@ -90,6 +90,6 @@ koniec_for:
 # Zakoncz poprawnie program - System Call nr 60 (sys_exit).
 
 mov	$sys_exit , %eax
-xor	%edi , %edi		# kod bledu:  %edi = %edi xor %edi = 0
+mov	$21 , %edi		# kod bledu:  %edi = %edi xor %edi = 0
 syscall
 
