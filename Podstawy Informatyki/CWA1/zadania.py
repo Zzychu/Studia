@@ -14,14 +14,13 @@ tel = input("podaj numer telefonu: ")
 email = input("podaj email: ")
 len_t_e = len(tel) + len(email) + 1
 maxlen = max(len_i_n, len_nf_s, len_t_e)
-print(maxlen)
 
 
-print("#" * (maxlen + 4))
-print("# " + imie + " " + nazwisko + ((" ") * (maxlen - len_i_n)) + " #")
-print("# " + nazwa_firmy + " " + stanowisko + ((" ") * (maxlen - len_nf_s)) + " #")
-print("# " + tel + " " + email + ((" ") * (maxlen - len_t_e)) + " #")
-print("#" * (maxlen + 4))
+print("*" * (maxlen + 4))
+print("* " + imie + " " + nazwisko + ((" ") * (maxlen - len_i_n)) + " *")
+print("* " + nazwa_firmy + " " + stanowisko + ((" ") * (maxlen - len_nf_s)) + " *")
+print("* " + tel + " " + email + ((" ") * (maxlen - len_t_e)) + " *")
+print("*" * (maxlen + 4))
 
 # ZADANIE 2
 
@@ -33,11 +32,11 @@ if input("podaj hasło: ") == haslo:
    answ = x + y
    print("ile to", x, "+", y, "?")
    if int(input("odp: ")) == answ:
-       print("Zalogowano pomyslnie")
+       print("Dostep przyznany")
    else:
-       print("niepoprawna odpowiedz, bład logowania")
+       print("Brak dostepu")
 else:
-   print("błędne hasło")
+   print("Brak dostepu")
 
 
 # ZADANIE 3
@@ -49,11 +48,11 @@ day = int(data.split(".")[0])
 month = int(data.split(".")[1])
 year = int(data.split(".")[2])
 #porownywanie daty uwzgledniajac kazdy z czlonow daty dla dnia 8.10.2026
-if year < 2008:
-    print("nie masz 18 lat")
+if year > 2008:
+    print("Brak dostepu")
 elif (year == 2008) & (month < 10):
-    print("nie masz 18 lat")
+    print("Brak dostepu")
 elif year == 2008 & month == 10 & day < 8:
-    print("nie masz 18 lat")
+    print("Brak dostepu")
 else:
-    print("Masz 18 lat")
+    print("Dostep przyznany")
