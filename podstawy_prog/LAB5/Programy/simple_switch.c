@@ -29,7 +29,7 @@ void main(void)
       break;
     case '0':
       printf("koniec\n");
-      exit 0;
+      exit(0);
     default:
       printf("Wprowadzono: znak spoza zakresu 0-5\n");
       break;
