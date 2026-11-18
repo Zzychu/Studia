@@ -1,0 +1,2 @@
+1. ilosc wierzcholkow: 5
+2. ilosc krawedzi: 6

@@ -1,7 +1,6 @@
 #zadanie 1
-from random import randint
-
-#n = int(input("do jakiej liczby wypisac tabliczke: "))
+import csv
+# n = int(input("do jakiej liczby wypisac tabliczke: "))
 #
 # tabliczka = []
 # for i in range(n):
@@ -19,7 +18,7 @@ from random import randint
 
 #zadanie 2
 
-
+# from random import randint
 # tablica_losowa = []
 # for i in range(3):
 #     wiersz = []
@@ -54,16 +53,110 @@ from random import randint
 
 
 #zadanie 3
+# n = int(input("podaj liczbe wierzcholkow: "))
+# m = int(input("podaj liczbe krawedzi: "))
+#
+# tablica_sasiedztwa = []
+#
+# for i in range(n):
+#     temp = []
+#     for j in range(n):
+#         temp.append(0)
+#     tablica_sasiedztwa.append(temp)
+#
+# for line in tablica_sasiedztwa:
+#     print(line)
+#
+# tablica_krawedzi = []
+#
+# for i in range(m):
+#     print(f"krawedz e{i}")
+#     tablica_krawedzi.append([int(input("podaj numer pierwszego wierzcholka: ")), int(input("podaj numer drugiego wierzholka: "))])
+#
+# for krawedz in tablica_krawedzi:
+#     tablica_sasiedztwa[krawedz[0]][krawedz[1]]=1
+#     tablica_sasiedztwa[krawedz[1]][krawedz[0]]=1
+#
+# for line in tablica_sasiedztwa:
+#     print(line)
 
-n = int(input("podaj liczbe wierzcholkow: "))
-m = int(input("podaj liczbe krawedzi: "))
 
-tablica_sasiedztwa = [[0] * n] * n
+#zadanie 4
 
-print(tablica_sasiedztwa)
+n = 0
+m = 0
+with open("rozmiar.txt", "r") as file:
+    for line in file:
+        if int(line.strip()[0]) == 1:
+            n = int(line.strip()[-1])
+        if int(line.strip()[0]) == 2:
+            m = int(line.strip()[-1])
+
+print(n, m)
+
+tablica_sasiedztwa = []
+
+for i in range(n):
+    temp = []
+    for j in range(n):
+        temp.append(0)
+    tablica_sasiedztwa.append(temp)
+
+for line in tablica_sasiedztwa:
+    print(line)
 
 tablica_krawedzi = []
 
 for i in range(m):
-    print("krawedz e")
+    print(f"krawedz e{i}")
     tablica_krawedzi.append([int(input("podaj numer pierwszego wierzcholka: ")), int(input("podaj numer drugiego wierzholka: "))])
+
+for krawedz in tablica_krawedzi:
+    tablica_sasiedztwa[krawedz[0]][krawedz[1]]=1
+    tablica_sasiedztwa[krawedz[1]][krawedz[0]]=1
+
+for line in tablica_sasiedztwa:
+    print(line)
+
+#zadanie domowe
+
+#csv
+
+# from csv import DictReader, DictWriter
+#
+# with open("kraje.csv", "r", encoding="utf8", newline='') as file, \
+#     open('output.csv', 'w', encoding='utf-8', newline='') as output:
+#     reader = DictReader(file)
+#     writer = DictWriter(output, fieldnames=reader.fieldnames)
+#     print(reader.fieldnames)
+#     for row in reader:
+#         print(row)
+#     for row in reader:
+#         writer.writerow(row)
+
+#json
+
+# from json import load, dump
+#
+# with open("programming.json", "r") as input_file:
+#     content = load(input_file)
+#     print(content)
+#     for lan in content.get('languages', []):
+#         print(lan)
+#
+# programmin_lan = str(input("podaj nazwe"))
+# date = int(input("podaj rok"))
+# para = input("podaj pardygmaty").split(",")
+# pop = int(input("podaj popularnosc"))
+# stars = int(input("podaj gwiazdki"))
+# content['languages'].append({
+#     "name": programmin_lan,
+#     "year_created": date,
+#     "paradigm": para,
+#     "popularity_index": pop,
+#     "github_stars": stars
+# })
+#
+# with open("programming2.json", "w") as output_file:
+#     dump(content, output_file)
+
