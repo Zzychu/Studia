@@ -31,11 +31,11 @@ pop	%rsi
 # a = edi	b = esi 	wybik eax
 
 or	%esi, %esi	#czy b = 0?
-#jz	return_gcd
+jz	return_gcd
 
 xor	%edx, %edx
 mov	%edi, %eax
-#div	%esi
+div	%esi
 mov	%esi,%edi
 mov	%edx,%esi
 
